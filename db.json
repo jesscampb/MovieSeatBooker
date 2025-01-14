@@ -1,0 +1,114 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Citizen Kane",
+      "genre": "Drama",
+      "year": 1941,
+      "duration": { "hours": 1, "minutes": 59 },
+      "rating": "PG",
+      "price": 120,
+      "plot": "A wealthy publishing tycoon’s life is traced through the memories of those who knew him.",
+      "impact": "Revolutionized filmmaking with non-linear storytelling, deep focus, and innovative camera techniques."
+    },
+    {
+      "id": 2,
+      "title": "Pulp Fiction",
+      "genre": "Crime",
+      "year": 1994,
+      "duration": { "hours": 2, "minutes": 34 },
+      "rating": "R",
+      "price": 140,
+      "plot": "The intersecting lives of criminals and mobsters are told in a darkly comedic, non-linear narrative.",
+      "impact": "Redefined the crime genre with its sharp dialogue, cultural references, and innovative storytelling."
+    },
+    {
+      "id": 3,
+      "title": "The Matrix",
+      "genre": "Sci-Fi",
+      "year": 1999,
+      "duration": { "hours": 2, "minutes": 16 },
+      "rating": "R",
+      "price": 150,
+      "plot": "A computer hacker learns about the true nature of reality and his role in a war against intelligent machines.",
+      "impact": "Introduced groundbreaking visual effects (bullet time) and explored deep philosophical themes."
+    },
+    {
+      "id": 4,
+      "title": "Casablanca",
+      "genre": "Romance",
+      "year": 1942,
+      "duration": { "hours": 1, "minutes": 42 },
+      "rating": "PG",
+      "price": 110,
+      "plot": "A cynical nightclub owner helps his former lover and her husband escape from Nazi-occupied Morocco.",
+      "impact": "Set a gold standard for romance films, blending timeless themes with iconic performances and lines."
+    },
+    {
+      "id": 5,
+      "title": "Star Wars: Episode IV - A New Hope",
+      "genre": "Sci-Fi",
+      "year": 1977,
+      "duration": { "hours": 2, "minutes": 1 },
+      "rating": "PG",
+      "price": 160,
+      "plot": "A young farmer joins a rebellion to destroy an evil empire’s planet-destroying weapon.",
+      "impact": "Revolutionized blockbuster filmmaking, pioneering special effects and redefining the sci-fi genre."
+    },
+    {
+      "id": 6,
+      "title": "The Godfather",
+      "genre": "Crime",
+      "year": 1972,
+      "duration": { "hours": 2, "minutes": 55 },
+      "rating": "R",
+      "price": 160,
+      "plot": "A patriarch of a crime family passes control to his reluctant son amidst a web of betrayal and violence.",
+      "impact": "Set the standard for crime dramas with its storytelling, cinematography, and character complexity."
+    },
+    {
+      "id": 7,
+      "title": "2001: A Space Odyssey",
+      "genre": "Sci-Fi",
+      "year": 1968,
+      "duration": { "hours": 2, "minutes": 29 },
+      "rating": "G",
+      "price": 130,
+      "plot": "A mysterious monolith influences humanity's evolution, culminating in a journey beyond the stars.",
+      "impact": "Reimagined sci-fi as a serious art form, using stunning visuals and philosophical exploration."
+    },
+    {
+      "id": 8,
+      "title": "Psycho",
+      "genre": "Horror",
+      "year": 1960,
+      "duration": { "hours": 1, "minutes": 49 },
+      "rating": "R",
+      "price": 120,
+      "plot": "A secretary’s stay at a remote motel takes a terrifying turn when she encounters its disturbed owner.",
+      "impact": "Redefined the horror genre with its suspenseful storytelling and shocking twists."
+    },
+    {
+      "id": 9,
+      "title": "Schindler's List",
+      "genre": "Historical Drama",
+      "year": 1993,
+      "duration": { "hours": 3, "minutes": 15 },
+      "rating": "R",
+      "price": 170,
+      "plot": "A German industrialist saves the lives of over a thousand Jewish refugees during the Holocaust.",
+      "impact": "An emotionally profound work that portrayed the Holocaust with stark realism and humanity."
+    },
+    {
+      "id": 10,
+      "title": "Black Panther",
+      "genre": "Action",
+      "year": 2018,
+      "duration": { "hours": 2, "minutes": 14 },
+      "rating": "PG-13",
+      "price": 150,
+      "plot": "T'Challa, the newly crowned king of Wakanda, must defend his nation and its advanced technology from a dangerous adversary.",
+      "impact": "A cultural milestone in representation, it celebrated African culture while redefining superhero films as tools for deeper storytelling."
+    }
+  ]
+}
