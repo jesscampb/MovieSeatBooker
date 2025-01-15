@@ -1,3 +1,5 @@
+import './MoviePicker.scss';
+
 function MoviePicker() {
     return(
         <div className="movie-container">
