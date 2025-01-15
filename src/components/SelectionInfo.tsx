@@ -1,3 +1,5 @@
+import './SelectionInfo.scss';
+
 function SelectionInfo(){
     return(
         <p className="text">
