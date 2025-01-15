@@ -1,3 +1,5 @@
+import './SeatPicker.scss';
+
 function SeatPicker(){
     return(
         <div className="container">
