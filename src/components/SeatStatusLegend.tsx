@@ -1,3 +1,5 @@
+import './SeatStatusLegend.scss';
+
 function SeatStatusLegend(){
     return(
         <ul className="showcase">
