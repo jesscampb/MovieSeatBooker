@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Movie } from "../models/Movie";
 
 
 const apiUrl = `http://localhost:3000/movies`;
@@ -13,4 +14,9 @@ export async function getMovie(id:string) {
     const response = await axios.get(`${apiUrl}/${id}`);
     const movie = await response.data;
     return movie;
+}
+
+export async function addMovie(newMovie: Omit<Movie, "id">) {
+    const response = await axios.post(apiUrl, newMovie);
+    return response.data;
 }
