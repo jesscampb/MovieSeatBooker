@@ -1,5 +1,5 @@
 import './MoviePicker.scss';
-import { getAllMovies, getMovie } from '../services/api';
+import { getAllMovies } from '../services/api';
 import { useEffect, useState } from 'react';
 import { Movie } from '../models/Movie';
 
