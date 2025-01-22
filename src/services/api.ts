@@ -16,7 +16,12 @@ export async function getMovie(id:string) {
     return movie;
 }
 
-export async function addMovie(newMovie: Omit<Movie, "id">) {
+export async function addMovie(newMovie: Omit<Movie, 'id'>) {
     const response = await axios.post(apiUrl, newMovie);
+    return response.data;
+}
+
+export async function updateMovie(editedMovie: Movie) {
+    const response = await axios.put(`${apiUrl}/${editedMovie.id}`, editedMovie);
     return response.data;
 }
