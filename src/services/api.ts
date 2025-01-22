@@ -33,3 +33,8 @@ export async function getAllSeats() {
     const seats = await response.data;
     return seats;
 }
+
+export async function updateSeat(updatedSeat:Seat) {
+    const response = await axios.put(`${apiUrl}/seats/${updatedSeat.id}`, updatedSeat);
+    return response.data;
+}
