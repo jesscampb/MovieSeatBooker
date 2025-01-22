@@ -1,5 +1,6 @@
-import axios from "axios";
-import { Movie } from "../models/Movie";
+import axios from 'axios';
+import { Movie } from '../models/Movie';
+import { Seat } from '../models/Seat';
 
 
 const apiUrl = `http://localhost:3000`;
@@ -24,4 +25,11 @@ export async function addMovie(newMovie: Omit<Movie, 'id'>) {
 export async function updateMovie(editedMovie: Movie) {
     const response = await axios.put(`${apiUrl}/movies/${editedMovie.id}`, editedMovie);
     return response.data;
+}
+
+
+export async function getAllSeats() {
+    const response = await axios.get(`${apiUrl}/seats`);
+    const seats = await response.data;
+    return seats;
 }
