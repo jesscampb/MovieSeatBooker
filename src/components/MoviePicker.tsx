@@ -1,14 +1,30 @@
 import './MoviePicker.scss';
+import { getAllMovies } from '../services/api';
+import { useEffect, useState } from 'react';
+import { Movie } from '../models/Movie';
+
 
 function MoviePicker() {
+
+  const [movies, setMovies] = useState<Movie[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await getAllMovies();
+      setMovies(result);
+    }
+    fetchData();
+  }, []);
+
   return(
       <div className="movie-container">
       <label htmlFor="movie">Pick a movie:</label>
       <select name="movie" id="movie">
-        <option value="100">Fast and furious 6 (100 kr)</option>
-        <option value="50">The mummy returns (50 kr)</option>
-        <option value="70">Jumanji: Welcome to the Jungle (70 kr)</option>
-        <option value="40">Rampage (40 kr)</option>
+        {movies.map((movie) => (
+          <option key={movie.id} value={movie.price}>
+            {movie.title} ({movie.price} kr)
+          </option>
+        ))}
       </select>
     </div>
   );
