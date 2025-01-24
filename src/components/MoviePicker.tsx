@@ -12,16 +12,15 @@ function MoviePicker({setMoviePrice}: MoviePickerProps) {
   const [movies, setMovies] = useState<Movie[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await getAllMovies();
-      setMovies(result);
+    const fetchMovieData = async () => {
+      const movieData = await getAllMovies();
+      setMovies(movieData);
     }
-    fetchData();
+    fetchMovieData();
   }, []);
 
   function changedMovieHandler(event: React.ChangeEvent<HTMLSelectElement>) {
     const selectedMoviePrice = parseFloat(event.target.value);
-    console.log('Selected movie price:', selectedMoviePrice);
     setMoviePrice(selectedMoviePrice);
   }
 
