@@ -19,10 +19,17 @@ function MoviePicker({setMoviePrice}: MoviePickerProps) {
     fetchData();
   }, []);
 
+  function changedMovieHandler(event: React.ChangeEvent<HTMLSelectElement>) {
+    const selectedMoviePrice = parseFloat(event.target.value);
+    console.log('Selected movie price:', selectedMoviePrice);
+    setMoviePrice(selectedMoviePrice);
+  }
+
   return(
       <div className="movie-container">
       <label htmlFor="movie">Pick a movie:</label>
-      <select name="movie" id="movie">
+      <select name="movie" id="movie" onChange={changedMovieHandler}>
+        <option value="">What do you want to watch?</option>
         {movies.map((movie) => (
           <option key={movie.id} value={movie.price}>
             {movie.title} ({movie.price} kr)
