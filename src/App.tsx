@@ -3,14 +3,18 @@ import MoviePicker from './components/MoviePicker';
 import SeatStatusLegend from './components/SeatStatusLegend';
 import SeatPicker from './components/SeatPicker';
 import SelectionInfo from './components/SelectionInfo';
+import { useState } from 'react';
 
 function App() {
+  const [moviePrice, setMoviePrice] = useState<number>(0);
+  const [seatCount, setSeatCount] = useState<number>(0);
+
   return (
     <>
-      <MoviePicker/>
+      <MoviePicker setMoviePrice={setMoviePrice}/>
       <SeatStatusLegend/>
-      <SeatPicker/>
-      <SelectionInfo/>
+      <SeatPicker setSeatCount={setSeatCount}/>
+      <SelectionInfo moviePrice={moviePrice} seatCount={seatCount}/>
     </>
   );
 }
