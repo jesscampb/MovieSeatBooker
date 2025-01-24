@@ -5,9 +5,10 @@ import { Movie } from '../models/Movie';
 
 interface MoviePickerProps {
   setMoviePrice: (selectedPrice: number) => void;
+  resetSelectedSeats: () => void;
 }
 
-function MoviePicker({setMoviePrice}: MoviePickerProps) {
+function MoviePicker({setMoviePrice, resetSelectedSeats}: MoviePickerProps) {
 
   const [movies, setMovies] = useState<Movie[]>([]);
 
@@ -22,6 +23,7 @@ function MoviePicker({setMoviePrice}: MoviePickerProps) {
   function changedMovieHandler(event: React.ChangeEvent<HTMLSelectElement>) {
     const selectedMoviePrice = parseFloat(event.target.value);
     setMoviePrice(selectedMoviePrice);
+    resetSelectedSeats();
   }
 
   return(
