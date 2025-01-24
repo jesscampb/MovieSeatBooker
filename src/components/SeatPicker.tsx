@@ -31,15 +31,14 @@ function SeatPicker({setSeatCount}: SeatPickerProps){
   };
 
   useEffect(() => {
-    console.log('Selected seats:', selectedSeats);
     setSeatCount(selectedSeats.length);
   }, [selectedSeats, setSeatCount]);
 
   return(
-    <div className="container">
-      <div className="screen"></div>
+    <div className='container'>
+      <div className='screen'></div>
       {Array.from({length: 6}).map((_, rowIndex) => (
-        <div key={rowIndex} className="row">
+        <div key={rowIndex} className='row'>
           {seats
             .filter((seat) => seat.row === String.fromCharCode(65 + rowIndex))
             .map((seat) => (
