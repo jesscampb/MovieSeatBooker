@@ -8,12 +8,17 @@ import { useState } from 'react';
 function App() {
   const [moviePrice, setMoviePrice] = useState<number>(0);
   const [seatCount, setSeatCount] = useState<number>(0);
+  const [selectedSeats, setSelectedSeats] = useState<string[]>([]);
+
+  const resetSelectedSeats = () => {
+    setSelectedSeats([]);
+  };
 
   return (
     <>
-      <MoviePicker setMoviePrice={setMoviePrice}/>
+      <MoviePicker setMoviePrice={setMoviePrice} resetSelectedSeats={resetSelectedSeats}/>
       <SeatStatusLegend/>
-      <SeatPicker setSeatCount={setSeatCount}/>
+      <SeatPicker setSeatCount={setSeatCount} selectedSeats={selectedSeats} setSelectedSeats={setSelectedSeats}/>
       <SelectionInfo moviePrice={moviePrice} seatCount={seatCount}/>
     </>
   );

@@ -5,12 +5,13 @@ import { getAllSeats } from '../services/api';
 
 interface SeatPickerProps {
   setSeatCount: (selectedCount: number) => void;
+  selectedSeats: string[];
+  setSelectedSeats: (seats: string[] | ((prev: string[]) => string[])) => void;
 }
 
-function SeatPicker({setSeatCount}: SeatPickerProps){
+function SeatPicker({setSeatCount, selectedSeats, setSelectedSeats}: SeatPickerProps) {
 
   const [seats, setSeats] = useState<Seat[]>([]);
-  const [selectedSeats, setSelectedSeats] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchSeatData = async () => {
@@ -23,10 +24,10 @@ function SeatPicker({setSeatCount}: SeatPickerProps){
   const handleSeatSelection = (seat: Seat) => {
     if (seat.booked) return;
 
-    setSelectedSeats((prev) => 
+    setSelectedSeats((prev: string[]) => 
       prev.includes(seat.id) 
-        ? prev.filter((id) => id !== seat.id) 
-        : [...prev, seat.id]
+      ? prev.filter((id) => id !== seat.id) 
+      : [...prev, seat.id]
     );
   };
 
