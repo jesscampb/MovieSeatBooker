@@ -3,8 +3,11 @@ import { getAllMovies } from '../services/api';
 import { useEffect, useState } from 'react';
 import { Movie } from '../models/Movie';
 
+interface MoviePickerProps {
+  setMoviePrice: (selectedPrice: number) => void;
+}
 
-function MoviePicker() {
+function MoviePicker({setMoviePrice}: MoviePickerProps) {
 
   const [movies, setMovies] = useState<Movie[]>([]);
 
