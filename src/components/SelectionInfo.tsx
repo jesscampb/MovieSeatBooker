@@ -12,7 +12,7 @@ function SelectionInfo({moviePrice, seatCount}: SelectionInfoProps){
   return(
     <p className="text">
       You have selected <span id="count">{seatCount}</span> seats 
-      for a price of <span id="total">{ticketTotal}</span> kr
+      for a price of <span id="total">{isNaN(ticketTotal) ? '0' : ticketTotal}</span> kr
     </p>
   );
 }
