@@ -6,9 +6,13 @@ interface SelectionInfoProps {
 }
 
 function SelectionInfo({moviePrice, seatCount}: SelectionInfoProps){
+
+  const ticketTotal = moviePrice * seatCount;
+
   return(
-      <p className="text">
-      You have selected <span id="count">0</span> seats for a price of $<span id="total">0</span>
+    <p className="text">
+      You have selected <span id="count">{seatCount}</span> seats 
+      for a price of <span id="total">{ticketTotal}</span> kr
     </p>
   );
 }
