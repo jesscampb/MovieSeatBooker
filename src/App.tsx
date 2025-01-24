@@ -14,7 +14,7 @@ function App() {
       <MoviePicker setMoviePrice={setMoviePrice}/>
       <SeatStatusLegend/>
       <SeatPicker setSeatCount={setSeatCount}/>
-      <SelectionInfo/>
+      <SelectionInfo moviePrice={moviePrice} seatCount={seatCount}/>
     </>
   );
 }
