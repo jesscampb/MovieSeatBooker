@@ -3,7 +3,7 @@ import './SeatPicker.scss';
 import { Seat } from '../models/Seat';
 import { getAllSeats } from '../services/api';
 
-function SeatPicker(){
+function SeatPicker({seatCount, setSeatCount}){
 
   const [seats, setSeats] = useState<Seat[]>([]);
   const [selectedSeats, setSelectedSeats] = useState<string[]>([]);
