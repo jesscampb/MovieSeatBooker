@@ -3,7 +3,11 @@ import './SeatPicker.scss';
 import { Seat } from '../models/Seat';
 import { getAllSeats } from '../services/api';
 
-function SeatPicker({seatCount, setSeatCount}){
+interface SeatPickerProps {
+  setSeatCount: (selectedCount: number) => void;
+}
+
+function SeatPicker({setSeatCount}: SeatPickerProps){
 
   const [seats, setSeats] = useState<Seat[]>([]);
   const [selectedSeats, setSelectedSeats] = useState<string[]>([]);
@@ -25,6 +29,11 @@ function SeatPicker({seatCount, setSeatCount}){
         : [...prev, seat.id]
     );
   };
+
+  useEffect(() => {
+    console.log('Selected seats:', selectedSeats);
+    setSeatCount(selectedSeats.length);
+  }, [selectedSeats, setSeatCount]);
 
   return(
     <div className="container">

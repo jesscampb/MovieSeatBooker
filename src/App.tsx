@@ -6,13 +6,13 @@ import SelectionInfo from './components/SelectionInfo';
 import { useState } from 'react';
 
 function App() {
-  const [seatCount, setSeatCount] = useState(0);
+  const [seatCount, setSeatCount] = useState<number>(0);
 
   return (
     <>
       <MoviePicker/>
       <SeatStatusLegend/>
-      <SeatPicker seatCount={seatCount} setSeatCount={setSeatCount}/>
+      <SeatPicker setSeatCount={setSeatCount}/>
       <SelectionInfo seatCount={seatCount}/>
     </>
   );
