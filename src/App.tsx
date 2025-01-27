@@ -4,6 +4,7 @@ import SeatStatusLegend from './components/SeatStatusLegend';
 import SeatPicker from './components/SeatPicker';
 import SelectionInfo from './components/SelectionInfo';
 import ProceedToDetailsButton from './components/ProceedToDetailsButton';
+import BookingForm from './components/BookingForm';
 import { useState } from 'react';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <SeatPicker setSeatCount={setSeatCount} selectedSeats={selectedSeats} setSelectedSeats={setSelectedSeats}/>
       <SelectionInfo moviePrice={moviePrice} seatCount={seatCount}/>
       <ProceedToDetailsButton/>
+      <BookingForm/>
     </>
   );
 }
