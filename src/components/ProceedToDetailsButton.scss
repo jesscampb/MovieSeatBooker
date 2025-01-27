@@ -1,0 +1,13 @@
+.primary-button {
+  background-color: hsl(185 88% 50%);
+  padding: 5px 40px;
+  margin-top: 16px;
+  border-style: none;
+  border-radius: 20px;
+  font-family: 'Poppins';
+  font-size: 14px;
+}
+
+.primary-button:hover {
+  background-color: hsl(185 88% 70%);
+}
