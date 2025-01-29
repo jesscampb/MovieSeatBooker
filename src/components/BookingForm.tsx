@@ -3,7 +3,7 @@ import './BookingForm.scss';
 function BookingForm() {
   return(
     <div className='booking-container'>
-      <p>Please, enter your contact information to proceed with the booking.</p>
+      <p className='booking-prompt'>Please, enter your contact information to proceed with the booking.</p>
       <form action='' className='form-container'>
         <div className='form-name'>
           <label htmlFor='fullName'>Name:</label>
@@ -13,6 +13,7 @@ function BookingForm() {
           <label htmlFor='phone'>Phone number:</label>
           <input type='tel' name='phone' id='phone' placeholder='Enter a phone number' />
         </div>
+        <button type='submit' className='form-button'>Confirm</button>
       </form>
     </div>
   );
