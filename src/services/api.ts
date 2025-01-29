@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Movie } from '../models/Movie';
 import { Seat } from '../models/Seat';
+import { Booking } from '../models/Booking';
 
 
 const apiUrl = `http://localhost:3000`;
@@ -36,5 +37,17 @@ export async function getAllSeats() {
 
 export async function updateSeat(updatedSeat:Seat) {
     const response = await axios.put(`${apiUrl}/seats/${updatedSeat.id}`, updatedSeat);
+    return response.data;
+}
+
+
+export async function getAllBookings() {
+    const response = await axios.get(`${apiUrl}/bookings`);
+    const bookings = await response.data;
+    return bookings;
+}
+
+export async function addBooking(newBooking: Omit<Booking, 'id'>) {
+    const response = await axios.post(`${apiUrl}/bookings`, newBooking);
     return response.data;
 }
