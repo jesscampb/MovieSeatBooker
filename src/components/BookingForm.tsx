@@ -4,24 +4,14 @@ function BookingForm() {
   return(
     <div className='booking-container'>
       <p>Please, enter your contact information to proceed with the booking.</p>
-      <form action=''>
-        <div>
-          <label htmlFor='firstName'>First name:</label>
+      <form action='' className='form-container'>
+        <div className='form-name'>
+          <label htmlFor='fullName'>Name:</label>
+          <input type='text' name='fullName' id='fullName' placeholder='Enter your full name' />
         </div>
-        <div>
-          <input type='text' name='firstName' id='firstName' placeholder='First name' />
-        </div>
-        <div>
-          <label htmlFor='lastName'>Last name:</label>
-         </div>
-        <div>
-          <input type='text' name='lastName' id='lastName' placeholder='Last name' />
-        </div>
-        <div>
+        <div className='form-phone'>
           <label htmlFor='phone'>Phone number:</label>
-        </div>
-        <div>
-          <input type='tel' name='phone' id='phone' placeholder='Phone number' />
+          <input type='tel' name='phone' id='phone' placeholder='Enter a phone number' />
         </div>
       </form>
     </div>
