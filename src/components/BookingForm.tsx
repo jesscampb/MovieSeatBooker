@@ -3,7 +3,9 @@ import './BookingForm.scss';
 function BookingForm() {
   return(
     <div className='booking-container'>
-      <p className='booking-prompt'>Please, enter your contact information to proceed with the booking.</p>
+      <p className='booking-prompt'>
+        Please, enter your contact information to proceed with the booking.
+      </p>
       <form action='' className='form-container'>
         <div className='form-name'>
           <label htmlFor='fullName'>Name:</label>

@@ -8,7 +8,8 @@
       "duration": { "hours": 1, "minutes": 59 },
       "price": 120,
       "plot": "A wealthy publishing tycoon’s life is traced through the memories of those who knew him.",
-      "impact": "Revolutionized filmmaking with non-linear storytelling, deep focus, and innovative camera techniques."
+      "impact": "Revolutionized filmmaking with non-linear storytelling, deep focus, and innovative camera techniques.",
+      "occupiedSeats": []
     },
     {
       "id": 2,
@@ -18,7 +19,8 @@
       "duration": { "hours": 2, "minutes": 34 },
       "price": 140,
       "plot": "The intersecting lives of criminals and mobsters are told in a darkly comedic, non-linear narrative.",
-      "impact": "Redefined the crime genre with its sharp dialogue, cultural references, and innovative storytelling."
+      "impact": "Redefined the crime genre with its sharp dialogue, cultural references, and innovative storytelling.",
+      "occupiedSeats": []
     },
     {
       "id": 3,
@@ -28,7 +30,8 @@
       "duration": { "hours": 2, "minutes": 16 },
       "price": 150,
       "plot": "A computer hacker learns about the true nature of reality and his role in a war against intelligent machines.",
-      "impact": "Introduced groundbreaking visual effects (bullet time) and explored deep philosophical themes."
+      "impact": "Introduced groundbreaking visual effects (bullet time) and explored deep philosophical themes.",
+      "occupiedSeats": []
     },
     {
       "id": 4,
@@ -38,7 +41,8 @@
       "duration": { "hours": 1, "minutes": 42 },
       "price": 110,
       "plot": "A cynical nightclub owner helps his former lover and her husband escape from Nazi-occupied Morocco.",
-      "impact": "Set a gold standard for romance films, blending timeless themes with iconic performances and lines."
+      "impact": "Set a gold standard for romance films, blending timeless themes with iconic performances and lines.",
+      "occupiedSeats": []
     },
     {
       "id": 5,
@@ -48,7 +52,8 @@
       "duration": { "hours": 2, "minutes": 1 },
       "price": 160,
       "plot": "A young farmer joins a rebellion to destroy an evil empire’s planet-destroying weapon.",
-      "impact": "Revolutionized blockbuster filmmaking, pioneering special effects and redefining the sci-fi genre."
+      "impact": "Revolutionized blockbuster filmmaking, pioneering special effects and redefining the sci-fi genre.",
+      "occupiedSeats": []
     },
     {
       "id": 6,
@@ -58,7 +63,8 @@
       "duration": { "hours": 2, "minutes": 55 },
       "price": 160,
       "plot": "A patriarch of a crime family passes control to his reluctant son amidst a web of betrayal and violence.",
-      "impact": "Set the standard for crime dramas with its storytelling, cinematography, and character complexity."
+      "impact": "Set the standard for crime dramas with its storytelling, cinematography, and character complexity.",
+      "occupiedSeats": []
     },
     {
       "id": 7,
@@ -68,7 +74,8 @@
       "duration": { "hours": 2, "minutes": 29 },
       "price": 130,
       "plot": "A mysterious monolith influences humanity's evolution, culminating in a journey beyond the stars.",
-      "impact": "Reimagined sci-fi as a serious art form, using stunning visuals and philosophical exploration."
+      "impact": "Reimagined sci-fi as a serious art form, using stunning visuals and philosophical exploration.",
+      "occupiedSeats": []
     },
     {
       "id": 8,
@@ -78,7 +85,8 @@
       "duration": { "hours": 1, "minutes": 49 },
       "price": 120,
       "plot": "A secretary’s stay at a remote motel takes a terrifying turn when she encounters its disturbed owner.",
-      "impact": "Redefined the horror genre with its suspenseful storytelling and shocking twists."
+      "impact": "Redefined the horror genre with its suspenseful storytelling and shocking twists.",
+      "occupiedSeats": []
     },
     {
       "id": 9,
@@ -88,7 +96,8 @@
       "duration": { "hours": 3, "minutes": 15 },
       "price": 170,
       "plot": "A German industrialist saves the lives of over a thousand Jewish refugees during the Holocaust.",
-      "impact": "An emotionally profound work that portrayed the Holocaust with stark realism and humanity."
+      "impact": "An emotionally profound work that portrayed the Holocaust with stark realism and humanity.",
+      "occupiedSeats": []
     },
     {
       "id": 10,
@@ -98,7 +107,8 @@
       "duration": { "hours": 2, "minutes": 14 },
       "price": 150,
       "plot": "T'Challa, the newly crowned king of Wakanda, must defend his nation and its advanced technology from a dangerous adversary.",
-      "impact": "A cultural milestone in representation, it celebrated African culture while redefining superhero films as tools for deeper storytelling."
+      "impact": "A cultural milestone in representation, it celebrated African culture while redefining superhero films as tools for deeper storytelling.",
+      "occupiedSeats": []
     }
   ],
   "seats": [
@@ -390,6 +400,15 @@
       "row": "F",
       "number": "8",
       "booked": false
+    }
+  ],
+  "bookings": [
+    {
+      "id": 0,
+      "fullName": "Admin",
+      "phone": "00112233",
+      "movieId": "4",
+      "seatId": ["10", "20", "30"]
     }
   ]
 }
