@@ -407,8 +407,8 @@
       "id": 0,
       "fullName": "Admin",
       "phone": "00112233",
-      "movieId": "4",
-      "seatId": ["10", "20", "30"]
+      "bookedMovie": "4",
+      "bookedSeats": ["10", "20", "30"]
     }
   ]
 }

@@ -11,11 +11,8 @@ interface SeatPickerProps {
 
 function SeatPicker({setSeatCount, selectedSeats, setSelectedSeats}: SeatPickerProps) {
 
-  // Flytta upp till App och ändra så den hämtar från movie?
-  // 1. denna 'seats' är samma som den längre ner i renderingen...
   const [seats, setSeats] = useState<Seat[]>([]);
 
-  // 1. setSeats samma som const ovanför
   useEffect(() => {
     const fetchSeatData = async () => {
       const seatData = await getAllSeats();
@@ -43,7 +40,6 @@ function SeatPicker({setSeatCount, selectedSeats, setSelectedSeats}: SeatPickerP
       <div className='screen'></div>
       {Array.from({length: 6}).map((_, rowIndex) => (
         <div key={rowIndex} className='row'>
-          {/* 1. ...samma som denna 'seats' */}
           {seats
             .filter((seat) => seat.row === String.fromCharCode(65 + rowIndex))
             .map((seat) => (
