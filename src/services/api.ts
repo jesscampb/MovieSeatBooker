@@ -52,7 +52,7 @@ export async function addBooking(newBooking: Omit<Booking, 'id'>) {
     return response.data;
 }
 
-export async function getBookingsByMovie(movieId: string) {
+export async function getBookingsByMovie(movieId: string): Promise<Booking[]> {
     const response = await axios.get(`${apiUrl}/bookings?movieId=${movieId}`);
     return response.data;
 }
