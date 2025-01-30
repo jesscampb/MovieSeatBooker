@@ -5,10 +5,11 @@ import { Movie } from '../models/Movie';
 
 interface MoviePickerProps {
   setMoviePrice: (selectedPrice: number) => void;
+  handleMovieSelection: (movie: Movie) => void;
   resetSelectedSeats: () => void;
 }
 
-function MoviePicker({setMoviePrice, resetSelectedSeats}: MoviePickerProps) {
+function MoviePicker({setMoviePrice, handleMovieSelection, resetSelectedSeats}: MoviePickerProps) {
 
   const [movies, setMovies] = useState<Movie[]>([]);
 
