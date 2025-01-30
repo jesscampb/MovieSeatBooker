@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react';
 import { Movie } from '../models/Movie';
 
 interface MoviePickerProps {
-  handleMovieSelection: (movie: Movie) => void;
+  handleMovieSelection: (movie: Movie | null) => void;
   resetSelectedSeats: () => void;
 }
 
 function MoviePicker({handleMovieSelection, resetSelectedSeats}: MoviePickerProps) {
-
   const [movies, setMovies] = useState<Movie[]>([]);
+
 
   useEffect(() => {
     const fetchMovieData = async () => {
@@ -20,8 +20,16 @@ function MoviePicker({handleMovieSelection, resetSelectedSeats}: MoviePickerProp
     fetchMovieData();
   }, []);
 
+
   function changedMovieHandler(event: React.ChangeEvent<HTMLSelectElement>) {
     const selectedMovieId = event.target.value;
+
+    if (!selectedMovieId) {
+      handleMovieSelection(null);
+      resetSelectedSeats();
+      return;
+    }
+
     const selectedMovie = movies.find((movie) => movie.id === selectedMovieId);
 
     if (selectedMovie) {
@@ -29,6 +37,7 @@ function MoviePicker({handleMovieSelection, resetSelectedSeats}: MoviePickerProp
       resetSelectedSeats();
     }
   }
+
 
   return(
     <div className='movie-container'>

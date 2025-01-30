@@ -14,10 +14,16 @@ function App() {
   const [seatCount, setSeatCount] = useState<number>(0);
   const [selectedSeats, setSelectedSeats] = useState<string[]>([]);
 
-  const handleMovieSelection = (movie: Movie) => {
+  const handleMovieSelection = (movie: Movie | null) => {
     setSelectedMovie(movie);
+    
+    if (movie) {
     setMoviePrice(movie.price);
-  }
+    }
+    else {
+      setMoviePrice(0);
+    }
+  };
 
   const resetSelectedSeats = () => {
     setSelectedSeats([]);
@@ -27,8 +33,12 @@ function App() {
     <>
       <MoviePicker handleMovieSelection={handleMovieSelection} resetSelectedSeats={resetSelectedSeats}/>
       <SeatStatusLegend/>
-      <SeatPicker setSeatCount={setSeatCount} selectedSeats={selectedSeats} setSelectedSeats={setSelectedSeats}/>
-      <SelectionInfo moviePrice={moviePrice} seatCount={seatCount}/>
+      {selectedMovie && (
+        <>
+          <SeatPicker setSeatCount={setSeatCount} selectedSeats={selectedSeats} setSelectedSeats={setSelectedSeats}/>
+          <SelectionInfo moviePrice={moviePrice} seatCount={seatCount}/>
+        </>
+      )}
       <ProceedToDetailsButton/>
       <BookingForm/>
     </>
