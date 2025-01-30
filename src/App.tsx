@@ -16,6 +16,7 @@ function App() {
 
   const handleMovieSelection = (movie: Movie) => {
     setSelectedMovie(movie);
+    setMoviePrice(movie.price);
   }
 
   const resetSelectedSeats = () => {
@@ -24,7 +25,7 @@ function App() {
 
   return (
     <>
-      <MoviePicker setMoviePrice={setMoviePrice} handleMovieSelection={handleMovieSelection} resetSelectedSeats={resetSelectedSeats}/>
+      <MoviePicker handleMovieSelection={handleMovieSelection} resetSelectedSeats={resetSelectedSeats}/>
       <SeatStatusLegend/>
       <SeatPicker setSeatCount={setSeatCount} selectedSeats={selectedSeats} setSelectedSeats={setSelectedSeats}/>
       <SelectionInfo moviePrice={moviePrice} seatCount={seatCount}/>

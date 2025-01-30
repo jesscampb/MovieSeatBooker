@@ -4,12 +4,11 @@ import { useEffect, useState } from 'react';
 import { Movie } from '../models/Movie';
 
 interface MoviePickerProps {
-  setMoviePrice: (selectedPrice: number) => void;
   handleMovieSelection: (movie: Movie) => void;
   resetSelectedSeats: () => void;
 }
 
-function MoviePicker({setMoviePrice, handleMovieSelection, resetSelectedSeats}: MoviePickerProps) {
+function MoviePicker({handleMovieSelection, resetSelectedSeats}: MoviePickerProps) {
 
   const [movies, setMovies] = useState<Movie[]>([]);
 
@@ -22,9 +21,13 @@ function MoviePicker({setMoviePrice, handleMovieSelection, resetSelectedSeats}: 
   }, []);
 
   function changedMovieHandler(event: React.ChangeEvent<HTMLSelectElement>) {
-    const selectedMoviePrice = parseFloat(event.target.value);
-    setMoviePrice(selectedMoviePrice);
-    resetSelectedSeats();
+    const selectedMovieId = event.target.value;
+    const selectedMovie = movies.find((movie) => movie.id === selectedMovieId);
+
+    if (selectedMovie) {
+      handleMovieSelection(selectedMovie);
+      resetSelectedSeats();
+    }
   }
 
   return(
@@ -33,7 +36,7 @@ function MoviePicker({setMoviePrice, handleMovieSelection, resetSelectedSeats}: 
       <select name='movie' id='movie' onChange={changedMovieHandler}>
         <option value=''>What do you want to watch?</option>
         {movies.map((movie) => (
-          <option key={movie.id} value={movie.price}>
+          <option key={movie.id} value={movie.id}>
             {movie.title} ({movie.price} kr)
           </option>
         ))}
