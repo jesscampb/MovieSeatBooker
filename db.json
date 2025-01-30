@@ -158,6 +158,13 @@
       "phone": "00112233",
       "movieId": "4",
       "seatId": ["10", "20", "30"]
+    },
+    {
+      "id": "1",
+      "fullName": "Admin Two",
+      "phone": "00112233",
+      "movieId": "1",
+      "seatId": ["2", "3", "4"]
     }
   ]
 }

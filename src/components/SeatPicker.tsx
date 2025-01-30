@@ -25,7 +25,6 @@ function SeatPicker({setSeatCount, selectedSeats, setSelectedSeats, occupiedSeat
 
   const handleSeatSelection = (seat: Seat) => {
     if (occupiedSeats.includes(seat.id)) return;
-      // add occupied class to seat
 
     setSelectedSeats((prev: string[]) => 
       prev.includes(seat.id) 
@@ -49,7 +48,7 @@ function SeatPicker({setSeatCount, selectedSeats, setSelectedSeats, occupiedSeat
             .filter((seat) => seat.row === String.fromCharCode(65 + rowIndex))
             .map((seat) => (
               <div key={seat.id} 
-                className={`seat ${seat.booked 
+                className={`seat ${occupiedSeats.includes(seat.id) 
                   ? 'occupied' : selectedSeats.includes(seat.id) 
                   ? 'selected' : ''
                 }`}
