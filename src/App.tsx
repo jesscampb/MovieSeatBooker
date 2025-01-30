@@ -45,7 +45,7 @@ function App() {
       <SeatStatusLegend/>
       {selectedMovie && (
         <>
-          <SeatPicker setSeatCount={setSeatCount} selectedSeats={selectedSeats} setSelectedSeats={setSelectedSeats}/>
+          <SeatPicker occupiedSeats={occupiedSeats} setSeatCount={setSeatCount} selectedSeats={selectedSeats} setSelectedSeats={setSelectedSeats}/>
           <SelectionInfo moviePrice={moviePrice} seatCount={seatCount}/>
         </>
       )}

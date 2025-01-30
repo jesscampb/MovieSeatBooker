@@ -7,9 +7,10 @@ interface SeatPickerProps {
   setSeatCount: (selectedCount: number) => void;
   selectedSeats: string[];
   setSelectedSeats: (seats: string[] | ((prev: string[]) => string[])) => void;
+  occupiedSeats: string[];
 }
 
-function SeatPicker({setSeatCount, selectedSeats, setSelectedSeats}: SeatPickerProps) {
+function SeatPicker({setSeatCount, selectedSeats, setSelectedSeats, occupiedSeats}: SeatPickerProps) {
 
   const [seats, setSeats] = useState<Seat[]>([]);
 
@@ -21,8 +22,10 @@ function SeatPicker({setSeatCount, selectedSeats, setSelectedSeats}: SeatPickerP
     fetchSeatData();
   }, []);
 
+
   const handleSeatSelection = (seat: Seat) => {
-    if (seat.booked) return;
+    if (occupiedSeats.includes(seat.id)) return;
+      // add occupied class to seat
 
     setSelectedSeats((prev: string[]) => 
       prev.includes(seat.id) 
@@ -31,9 +34,11 @@ function SeatPicker({setSeatCount, selectedSeats, setSelectedSeats}: SeatPickerP
     );
   };
 
+
   useEffect(() => {
     setSeatCount(selectedSeats.length);
   }, [selectedSeats, setSeatCount]);
+
 
   return(
     <div className='container'>
