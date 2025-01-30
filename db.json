@@ -112,294 +112,245 @@
     }
   ],
   "seats": [
-
     {
       "id": 1,
       "row": "A",
-      "number": "1",
-      "booked": false
+      "number": "1"
     },
     {
       "id": 2,
       "row": "A",
-      "number": "2",
-      "booked": false
+      "number": "2"
     },
     {
       "id": 3,
       "row": "A",
-      "number": "3",
-      "booked": false
+      "number": "3"
     },
     {
       "id": 4,
       "row": "A",
-      "number": "4",
-      "booked": false
+      "number": "4"
     },
     {
       "id": 5,
       "row": "A",
-      "number": "5",
-      "booked": false
+      "number": "5"
     },
     {
       "id": 6,
       "row": "A",
-      "number": "6",
-      "booked": false
+      "number": "6"
     },
     {
       "id": 7,
       "row": "A",
-      "number": "7",
-      "booked": false
+      "number": "7"
     },
     {
       "id": 8,
       "row": "A",
-      "number": "8",
-      "booked": false
+      "number": "8"
     },
     {
       "id": 9,
       "row": "B",
-      "number": "1",
-      "booked": false
+      "number": "1"
     },
     {
       "id": 10,
       "row": "B",
-      "number": "2",
-      "booked": false
+      "number": "2"
     },
     {
       "id": 11,
       "row": "B",
-      "number": "3",
-      "booked": false
+      "number": "3"
     },
     {
       "id": 12,
       "row": "B",
-      "number": "4",
-      "booked": false
+      "number": "4"
     },
     {
       "id": 13,
       "row": "B",
-      "number": "5",
-      "booked": false
+      "number": "5"
     },
     {
       "id": 14,
       "row": "B",
-      "number": "6",
-      "booked": false
+      "number": "6"
     },
     {
       "id": 15,
       "row": "B",
-      "number": "7",
-      "booked": false
+      "number": "7"
     },
     {
       "id": 16,
       "row": "B",
-      "number": "8",
-      "booked": false
+      "number": "8"
     },
     {
       "id": 17,
       "row": "C",
-      "number": "1",
-      "booked": false
+      "number": "1"
     },
     {
       "id": 18,
       "row": "C",
-      "number": "2",
-      "booked": false
+      "number": "2"
     },
     {
       "id": 19,
       "row": "C",
-      "number": "3",
-      "booked": false
+      "number": "3"
     },
     {
       "id": 20,
       "row": "C",
-      "number": "4",
-      "booked": false
+      "number": "4"
     },
     {
       "id": 21,
       "row": "C",
-      "number": "5",
-      "booked": false
+      "number": "5"
     },
     {
       "id": 22,
       "row": "C",
-      "number": "6",
-      "booked": false
+      "number": "6"
     },
     {
       "id": 23,
       "row": "C",
-      "number": "7",
-      "booked": false
+      "number": "7"
     },
     {
       "id": 24,
       "row": "C",
-      "number": "8",
-      "booked": false
+      "number": "8"
     },
     {
       "id": 25,
       "row": "D",
-      "number": "1",
-      "booked": false
+      "number": "1"
     },
     {
       "id": 26,
       "row": "D",
-      "number": "2",
-      "booked": false
+      "number": "2"
     },
     {
       "id": 27,
       "row": "D",
-      "number": "3",
-      "booked": false
+      "number": "3"
     },
     {
       "id": 28,
       "row": "D",
-      "number": "4",
-      "booked": false
+      "number": "4"
     },
     {
       "id": 29,
       "row": "D",
-      "number": "5",
-      "booked": false
+      "number": "5"
     },
     {
       "id": 30,
       "row": "D",
-      "number": "6",
-      "booked": false
+      "number": "6"
     },
     {
       "id": 31,
       "row": "D",
-      "number": "7",
-      "booked": false
+      "number": "7"
     },
     {
       "id": 32,
       "row": "D",
-      "number": "8",
-      "booked": false
+      "number": "8"
     },
     {
       "id": 33,
       "row": "E",
-      "number": "1",
-      "booked": false
+      "number": "1"
     },
     {
       "id": 34,
       "row": "E",
-      "number": "2",
-      "booked": false
+      "number": "2"
     },
     {
       "id": 35,
       "row": "E",
-      "number": "3",
-      "booked": false
+      "number": "3"
     },
     {
       "id": 36,
       "row": "E",
-      "number": "4",
-      "booked": false
+      "number": "4"
     },
     {
       "id": 37,
       "row": "E",
-      "number": "5",
-      "booked": false
+      "number": "5"
     },
     {
       "id": 38,
       "row": "E",
-      "number": "6",
-      "booked": false
+      "number": "6"
     },
     {
       "id": 39,
       "row": "E",
-      "number": "7",
-      "booked": false
+      "number": "7"
     },
     {
       "id": 40,
       "row": "E",
-      "number": "8",
-      "booked": false
+      "number": "8"
     },
     {
       "id": 41,
       "row": "F",
-      "number": "1",
-      "booked": false
+      "number": "1"
     },
     {
       "id": 42,
       "row": "F",
-      "number": "2",
-      "booked": false
+      "number": "2"
     },
     {
       "id": 43,
       "row": "F",
-      "number": "3",
-      "booked": false
+      "number": "3"
     },
     {
       "id": 44,
       "row": "F",
-      "number": "4",
-      "booked": false
+      "number": "4"
     },
     {
       "id": 45,
       "row": "F",
-      "number": "5",
-      "booked": false
+      "number": "5"
     },
     {
       "id": 46,
       "row": "F",
-      "number": "6",
-      "booked": false
+      "number": "6"
     },
     {
       "id": 47,
       "row": "F",
-      "number": "7",
-      "booked": false
+      "number": "7"
     },
     {
       "id": 48,
       "row": "F",
-      "number": "8",
-      "booked": false
+      "number": "8"
     }
   ],
   "bookings": [
