@@ -12,7 +12,7 @@ export async function getAllMovies() {
     return movies;
 }
 
-export async function getMovie(id:string) {
+export async function getMovie(id: string) {
     const response = await axios.get(`${apiUrl}/movies/${id}`);
     const movie = await response.data;
     return movie;
@@ -35,7 +35,7 @@ export async function getAllSeats() {
     return seats;
 }
 
-export async function updateSeat(updatedSeat:Seat) {
+export async function updateSeat(updatedSeat: Seat) {
     const response = await axios.put(`${apiUrl}/seats/${updatedSeat.id}`, updatedSeat);
     return response.data;
 }
@@ -49,5 +49,10 @@ export async function getAllBookings() {
 
 export async function addBooking(newBooking: Omit<Booking, 'id'>) {
     const response = await axios.post(`${apiUrl}/bookings`, newBooking);
+    return response.data;
+}
+
+export async function getBookingsByMovie(movieId: string) {
+    const response = await axios.get(`${apiUrl}/bookings?movieId=${movieId}`);
     return response.data;
 }
