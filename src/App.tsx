@@ -50,7 +50,7 @@ function App() {
         </>
       )}
       <ProceedToDetailsButton/>
-      <BookingForm/>
+      <BookingForm selectedMovie={selectedMovie} selectedSeats={selectedSeats}/>
     </>
   );
 }

@@ -1,8 +1,13 @@
 import './BookingForm.scss';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { addBooking } from '../services/api';
+import { Movie } from '../models/Movie';
 
+interface BookingFormProps {
+  selectedMovie: Movie | null;
+  selectedSeats: string[];
+}
 
 const BookingSchema = Yup.object().shape({
   fullName: Yup.string()
@@ -14,16 +19,18 @@ const BookingSchema = Yup.object().shape({
     .required('Phone number is required')
 });
 
-function BookingForm() {
+function BookingForm({selectedMovie, selectedSeats}: BookingFormProps) {
 
   const handleBookingSubmit = async (values: {fullName: string; phone: string;}) => {
+    if (!selectedMovie?.id) return;
+
     const newBooking = {
       fullName: values.fullName,
       phone: values.phone,
-      movieId: '',
-      seatId: ['']
+      movieId: selectedMovie.id,
+      seatId: selectedSeats
     };
-  
+    
     await addBooking(newBooking);
   }
 
