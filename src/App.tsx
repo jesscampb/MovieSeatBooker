@@ -47,9 +47,9 @@ function App() {
         <>
           <SeatPicker occupiedSeats={occupiedSeats} setSeatCount={setSeatCount} selectedSeats={selectedSeats} setSelectedSeats={setSelectedSeats}/>
           <SelectionInfo moviePrice={moviePrice} seatCount={seatCount}/>
+          <ProceedToDetailsButton/>
         </>
       )}
-      <ProceedToDetailsButton/>
       <BookingForm selectedMovie={selectedMovie} selectedSeats={selectedSeats}/>
     </>
   );
