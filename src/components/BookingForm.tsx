@@ -3,6 +3,15 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 
+const BookingSchema = Yup.object().shape({
+  fullName: Yup.string()
+    .min(2, 'Too short!')
+    .max(50, 'Too long!')
+    .required('Name is required'),
+  phone: Yup.string()
+    .matches(/^\+?\d{7,15}$/, 'Invalid phone number format')
+    .required('Phone number is required')
+})
 
 function BookingForm() {
   return(
@@ -17,7 +26,7 @@ function BookingForm() {
         </div>
         <div className='form-phone'>
           <label htmlFor='phone'>Phone number:</label>
-          <input type='tel' name='phone' id='phone' placeholder='Enter a phone number' />
+          <input type='tel' name='phone' id='phone' placeholder='Enter a phone number (7-15 digits)' />
         </div>
         <button type='submit' className='form-button'>Confirm</button>
       </form>
