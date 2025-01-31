@@ -38,19 +38,27 @@ function BookingForm() {
         }}
         validationSchema={BookingSchema}
         onSubmit={handleBookingSubmit}
-      ></Formik>
-
-      <form action='' className='form-container'>
-        <div className='form-name'>
-          <label htmlFor='fullName'>Name:</label>
-          <input type='text' name='fullName' id='fullName' placeholder='Enter your full name' />
-        </div>
-        <div className='form-phone'>
-          <label htmlFor='phone'>Phone number:</label>
-          <input type='tel' name='phone' id='phone' placeholder='Enter a phone number (7-15 digits)' />
-        </div>
-        <button type='submit' className='form-button'>Confirm</button>
-      </form>
+      >
+        {({errors, touched}) => (
+          <Form className='form-container'>
+            <div className='form-name'>
+              <label htmlFor='fullName'>Name:</label>
+              <Field type='text' name='fullName' id='fullName' placeholder='Enter your full name' />
+              {errors.fullName && touched.fullName ? (
+                <div className='error-message'>{errors.fullName}</div>
+              ): null}
+            </div>
+            <div className='form-phone'>
+              <label htmlFor='phone'>Phone number:</label>
+              <Field type='tel' name='phone' id='phone' placeholder='Enter a phone number (7-15 digits)' />
+              {errors.phone && touched.phone ? (
+                <div className='error-message'>{errors.phone}</div>
+              ): null}
+            </div>
+            <button type='submit' className='form-button'>Confirm</button>
+          </Form>
+        )}
+      </Formik>
 
     </div>
   );
