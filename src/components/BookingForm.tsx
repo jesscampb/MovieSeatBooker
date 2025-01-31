@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { addBooking } from '../services/api';
 
+
 const BookingSchema = Yup.object().shape({
   fullName: Yup.string()
     .min(2, 'Too short!')
@@ -13,18 +14,19 @@ const BookingSchema = Yup.object().shape({
     .required('Phone number is required')
 });
 
-const handleBookingSubmit = async (values: {fullName: string; phone: string;}) => {
-  const newBooking = {
-    fullName: values.fullName,
-    phone: values.phone,
-    movieId: '',
-    seatId: ['']
-  };
-
-  await addBooking(newBooking);
-}
-
 function BookingForm() {
+
+  const handleBookingSubmit = async (values: {fullName: string; phone: string;}) => {
+    const newBooking = {
+      fullName: values.fullName,
+      phone: values.phone,
+      movieId: '',
+      seatId: ['']
+    };
+  
+    await addBooking(newBooking);
+  }
+
   return(
     <div className='booking-container'>
       <p className='booking-prompt'>
