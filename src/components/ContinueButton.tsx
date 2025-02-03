@@ -1,6 +1,6 @@
-import './ProceedToDetailsButton.scss';
+import './ContinueButton.scss';
 
-function ProceedToDetailsButton() {
+function ContinueButton() {
   return(
     <div className='button-container'>
       <button className='primary-button'>
@@ -10,4 +10,4 @@ function ProceedToDetailsButton() {
   );
 }
 
-export default ProceedToDetailsButton;
+export default ContinueButton;

@@ -3,7 +3,7 @@ import MoviePicker from './components/MoviePicker';
 import SeatStatusLegend from './components/SeatStatusLegend';
 import SeatPicker from './components/SeatPicker';
 import SelectionInfo from './components/SelectionInfo';
-import ProceedToDetailsButton from './components/ProceedToDetailsButton';
+import ContinueButton from './components/ContinueButton';
 import BookingForm from './components/BookingForm';
 import { useState } from 'react';
 import { Movie } from './models/Movie';
@@ -15,6 +15,7 @@ function App() {
   const [seatCount, setSeatCount] = useState<number>(0);
   const [selectedSeats, setSelectedSeats] = useState<string[]>([]);
   const [occupiedSeats, setOccupiedSeats] = useState<string[]>([]);
+  const [readyToBook, setReadyToBook] = useState<boolean>(false);
 
   const fetchBookings = async (movieId: string) => {
     const bookings = await getBookingsByMovie(movieId);
@@ -45,9 +46,9 @@ function App() {
       <SeatStatusLegend/>
       {selectedMovie && (
         <>
-          <SeatPicker occupiedSeats={occupiedSeats} setSeatCount={setSeatCount} selectedSeats={selectedSeats} setSelectedSeats={setSelectedSeats}/>
+          <SeatPicker setReadyToBook={setReadyToBook} occupiedSeats={occupiedSeats} setSeatCount={setSeatCount} selectedSeats={selectedSeats} setSelectedSeats={setSelectedSeats}/>
           <SelectionInfo moviePrice={moviePrice} seatCount={seatCount}/>
-          <ProceedToDetailsButton/>
+          <ContinueButton readyToBook={readyToBook}/>
         </>
       )}
       <BookingForm selectedMovie={selectedMovie} selectedSeats={selectedSeats}/>
