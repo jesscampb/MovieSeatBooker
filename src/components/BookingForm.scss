@@ -5,6 +5,10 @@
   border-radius: 10px;
 }
 
+.booking-container.show {
+  display: block;
+}
+
 .booking-prompt {
   margin: 0;
   font-size: 1.125rem;

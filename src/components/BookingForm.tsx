@@ -5,6 +5,7 @@ import { addBooking } from '../services/api';
 import { Movie } from '../models/Movie';
 
 interface BookingFormProps {
+  readyToBook: boolean;
   selectedMovie: Movie | null;
   selectedSeats: string[];
 }
@@ -19,7 +20,7 @@ const BookingSchema = Yup.object().shape({
     .required('Phone number is required')
 });
 
-function BookingForm({selectedMovie, selectedSeats}: BookingFormProps) {
+function BookingForm({readyToBook, selectedMovie, selectedSeats}: BookingFormProps) {
 
   const handleBookingSubmit = async (values: {fullName: string; phone: string;}) => {
     if (!selectedMovie?.id) return;
