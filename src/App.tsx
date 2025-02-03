@@ -15,7 +15,6 @@ function App() {
   const [seatCount, setSeatCount] = useState<number>(0);
   const [selectedSeats, setSelectedSeats] = useState<string[]>([]);
   const [occupiedSeats, setOccupiedSeats] = useState<string[]>([]);
-  const [readyToBook, setReadyToBook] = useState<boolean>(false);
 
   const fetchBookings = async (movieId: string) => {
     const bookings = await getBookingsByMovie(movieId);
@@ -50,10 +49,14 @@ function App() {
         <>
           <SeatPicker occupiedSeats={occupiedSeats} setSeatCount={setSeatCount} selectedSeats={selectedSeats} setSelectedSeats={setSelectedSeats}/>
           <SelectionInfo moviePrice={moviePrice} seatCount={seatCount}/>
-          <ContinueButton seatCount={seatCount}/>
         </>
       )}
-      <BookingForm selectedMovie={selectedMovie} selectedSeats={selectedSeats}/>
+      {seatCount > 0 && (
+        <>
+          <ContinueButton/>
+          <BookingForm selectedMovie={selectedMovie} selectedSeats={selectedSeats}/>
+        </>
+      )}
     </>
   );
 }

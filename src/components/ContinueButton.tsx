@@ -1,10 +1,6 @@
 import './ContinueButton.scss';
 
-interface ContinueButtonProps {
-  seatCount: number;
-}
-
-function ContinueButton({seatCount}: ContinueButtonProps) {
+function ContinueButton() {
 
   return(
     <div className='button-container'>
