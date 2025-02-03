@@ -40,15 +40,17 @@ function App() {
     setSelectedSeats([]);
   };
 
+  
+
   return (
     <>
       <MoviePicker handleMovieSelection={handleMovieSelection} resetSelectedSeats={resetSelectedSeats}/>
       <SeatStatusLegend/>
       {selectedMovie && (
         <>
-          <SeatPicker setReadyToBook={setReadyToBook} occupiedSeats={occupiedSeats} setSeatCount={setSeatCount} selectedSeats={selectedSeats} setSelectedSeats={setSelectedSeats}/>
+          <SeatPicker occupiedSeats={occupiedSeats} setSeatCount={setSeatCount} selectedSeats={selectedSeats} setSelectedSeats={setSelectedSeats}/>
           <SelectionInfo moviePrice={moviePrice} seatCount={seatCount}/>
-          <ContinueButton readyToBook={readyToBook}/>
+          <ContinueButton seatCount={seatCount}/>
         </>
       )}
       <BookingForm selectedMovie={selectedMovie} selectedSeats={selectedSeats}/>
