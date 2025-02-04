@@ -4,11 +4,12 @@ import { useEffect, useState } from 'react';
 import { Movie } from '../models/Movie';
 
 interface MoviePickerProps {
+  resetReadyToBookState: () => void;
   handleMovieSelection: (movie: Movie | null) => void;
   resetSelectedSeats: () => void;
 }
 
-function MoviePicker({handleMovieSelection, resetSelectedSeats}: MoviePickerProps) {
+function MoviePicker({resetReadyToBookState, handleMovieSelection, resetSelectedSeats}: MoviePickerProps) {
   const [movies, setMovies] = useState<Movie[]>([]);
 
 
@@ -35,6 +36,7 @@ function MoviePicker({handleMovieSelection, resetSelectedSeats}: MoviePickerProp
     if (selectedMovie) {
       handleMovieSelection(selectedMovie);
       resetSelectedSeats();
+      resetReadyToBookState();
     }
   }
 

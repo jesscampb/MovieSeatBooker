@@ -36,7 +36,7 @@ function BookingForm({readyToBook, selectedMovie, selectedSeats}: BookingFormPro
   }
 
   return(
-    <div className='booking-container'>
+    <div className={`booking-container ${readyToBook ? 'show' : ''}`}>
       <p className='booking-prompt'>
         Please, enter your contact information to proceed with the booking.
       </p>

@@ -4,13 +4,15 @@ import { Seat } from '../models/Seat';
 import { getAllSeats } from '../services/api';
 
 interface SeatPickerProps {
+  resetReadyToBookState: () => void;
+  seatCount: number;
   setSeatCount: (selectedCount: number) => void;
   selectedSeats: string[];
   setSelectedSeats: (seats: string[] | ((prev: string[]) => string[])) => void;
   occupiedSeats: string[];
 }
 
-function SeatPicker({setSeatCount, selectedSeats, setSelectedSeats, occupiedSeats}: SeatPickerProps) {
+function SeatPicker({resetReadyToBookState, seatCount, setSeatCount, selectedSeats, setSelectedSeats, occupiedSeats}: SeatPickerProps) {
 
   const [seats, setSeats] = useState<Seat[]>([]);
 
@@ -31,6 +33,10 @@ function SeatPicker({setSeatCount, selectedSeats, setSelectedSeats, occupiedSeat
       ? prev.filter((id) => id !== seat.id) 
       : [...prev, seat.id]
     );
+    
+    if(seatCount === 0) {
+      resetReadyToBookState();
+    };
   };
 
 
