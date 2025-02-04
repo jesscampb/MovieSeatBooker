@@ -1,4 +1,4 @@
-import './MovieForm.scss';
+import './AdminMovieForm.scss';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { Movie } from '../models/Movie';
@@ -30,7 +30,7 @@ const MovieSchema = Yup.object().shape({
     .nullable()
 });
 
-function MovieForm() {
+function AdminMovieForm() {
 
   const handleMovieSubmit = async (values: Movie, {resetForm}: {resetForm: () => void }) => {
     if (values.id) {
@@ -135,4 +135,4 @@ function MovieForm() {
   );
 }
 
-export default MovieForm;
+export default AdminMovieForm;

@@ -1,10 +1,10 @@
-import MovieForm from "../components/MovieForm";
+import AdminMovieForm from "../components/AdminMovieForm";
 
 
 function AdminPage() {
   return (
     <>
-      <MovieForm />
+      <AdminMovieForm />
     </>
   );
 }
