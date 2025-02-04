@@ -1,7 +1,10 @@
+import MovieForm from "../components/MovieForm";
+
+
 function AdminPage() {
   return (
     <>
-    
+      <MovieForm />
     </>
   );
 }
