@@ -1,6 +1,7 @@
 import './App.scss';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import MovieBookingPage from './pages/MovieBookingPage';
+import AdminPage from './pages/AdminPage';
 
 function Layout() {
   return(
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <MovieBookingPage />
+      },
+      {
+        path: '/admin',
+        element: <AdminPage />
       }
     ]
   }
