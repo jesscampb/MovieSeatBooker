@@ -4,12 +4,15 @@ import { Seat } from '../models/Seat';
 import { getAllSeats } from '../services/api';
 
 interface SeatPickerProps {
+  resetReadyToBookState: () => void;
+  seatCount: number;
   setSeatCount: (selectedCount: number) => void;
   selectedSeats: string[];
   setSelectedSeats: (seats: string[] | ((prev: string[]) => string[])) => void;
+  occupiedSeats: string[];
 }
 
-function SeatPicker({setSeatCount, selectedSeats, setSelectedSeats}: SeatPickerProps) {
+function SeatPicker({resetReadyToBookState, seatCount, setSeatCount, selectedSeats, setSelectedSeats, occupiedSeats}: SeatPickerProps) {
 
   const [seats, setSeats] = useState<Seat[]>([]);
 
@@ -21,19 +24,26 @@ function SeatPicker({setSeatCount, selectedSeats, setSelectedSeats}: SeatPickerP
     fetchSeatData();
   }, []);
 
+
   const handleSeatSelection = (seat: Seat) => {
-    if (seat.booked) return;
+    if (occupiedSeats.includes(seat.id)) return;
 
     setSelectedSeats((prev: string[]) => 
       prev.includes(seat.id) 
       ? prev.filter((id) => id !== seat.id) 
       : [...prev, seat.id]
     );
+    
+    if(seatCount === 0) {
+      resetReadyToBookState();
+    };
   };
+
 
   useEffect(() => {
     setSeatCount(selectedSeats.length);
   }, [selectedSeats, setSeatCount]);
+
 
   return(
     <div className='container'>
@@ -44,7 +54,7 @@ function SeatPicker({setSeatCount, selectedSeats, setSelectedSeats}: SeatPickerP
             .filter((seat) => seat.row === String.fromCharCode(65 + rowIndex))
             .map((seat) => (
               <div key={seat.id} 
-                className={`seat ${seat.booked 
+                className={`seat ${occupiedSeats.includes(seat.id) 
                   ? 'occupied' : selectedSeats.includes(seat.id) 
                   ? 'selected' : ''
                 }`}
