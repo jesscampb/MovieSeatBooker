@@ -40,9 +40,11 @@ function AdminMovieForm({movieToEdit}: AdminMovieFormProps) {
   const handleMovieSubmit = async (values: Movie, {resetForm}: {resetForm: () => void }) => {
     if (values.id) {
       await updateMovie(values);
+      alert(`Changes to movie "${values.title}" saved to database.`)
     }
     else {
       await addMovie(values);
+      alert(`New movie "${values.title}" added to database.`)
     }
 
     resetForm();
