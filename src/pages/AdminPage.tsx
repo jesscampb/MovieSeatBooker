@@ -13,7 +13,7 @@ function AdminPage() {
 
   return (
     <>
-      <AdminMoviePicker />
+      <AdminMoviePicker handleMovieToEdit={handleMovieToEdit}/>
       <AdminMovieForm />
     </>
   );
