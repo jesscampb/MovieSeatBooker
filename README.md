@@ -7,9 +7,11 @@ Uppgiften är från början ett examinerande moment i kursen *Frontend 2* under 
 ### Bokningssidan
 - **Filmval**: I dropdown-menyn, som ligger överst på sidan, kan användaren se och välja bland filmer.
 - **Välj säten**: När en film är vald så laddas biosalongen in med alla säten och låter användaren välja bland lediga platser. Under salongen visas information om hur många säten som är valda och det totala biljettpriset, baserat på filmval. Visuell referens över de olika sätesstatusarna finns i panelen ovanför salongen.
-- **Gör en bokning**: När film och platser är valda så klickar användaren på knappen *Continue with booking* för att gå vidare till ett formulär där namn och telefonnummer fylls i. Tryck på knappen *Confirm* för att slutföra bokningen. En alert, med det inmatade telefonnumret, visas som bekräftelse på att bokningen är genomförd.
-- 
+- **Boka biljetter**: När film och platser är valda så klickar användaren på knappen *Continue with booking* för att gå vidare till ett formulär där namn och telefonnummer fylls i. Tryck på knappen *Confirm* för att slutföra bokningen. En alert, med det inmatade telefonnumret, visas som bekräftelse på att bokningen är genomförd.
+
+
 ### Adminsidan
+- **Navigering**: Nå hit genom att lägga till */admin* i slutet av URL:en i adressfältet.
 - **Lägg till ny film**: Genom att fylla i det tomma formuläret som finns här kan Admin lägga till en ny film i databasen. En alert, innehållande filmens titel, visas för Admin som bekräftelse att skapandet är genomförd.
 - **Uppdatera film**: Välj en film i dropdown-menyn för att ladda in dess data i formulärets fält, ändra på innehållet i önskade fält och tryck på knappen *Save*. Filmen uppdateras i databasen med den ändrade informationen. En alert, innehållande filmens titel, visas för Admin som bekräftelse att uppdateringen är genomförd.
 
@@ -39,6 +41,10 @@ För att få sidan att funka behöver du följa dessa enkla steg:
 - **Git/GitHub**: Versionshantering och kodlagring
 
 ## Motivering av val
+- **React**: Jag valde att bygga projektet i React eftersom jag aldrig tidigare använt det och jag gillar den organiserade, uppdelade och tydliga komponentbaserade arkitekturen som används.
+- **TypeScript**: Även detta är helt nytt för mig att använda i ett projekt. Jag tyckte att TypeScript verkade väldigt bra, framförallt eftersom det förbättrar kodkvaliteten genom att "tvinga" en till att ange typer. Det blir både tydligare när man kodar och förvaltar, men även enklare att hitta fel om det uppstår.
+- **Axios**: Denna valde jag pga hur enkel och tydlig syntaxen är när man gör HTTP-anrop genom att använda Axios i jämförelse med vanliga *fetch*.
+- **Formik**: Valde Formik eftersom det är så effektivt när det gäller hantering och validering av formulär i React.
 
-
+  
 Skapad av [Jessica Campbell](https://github.com/jesscampb)
