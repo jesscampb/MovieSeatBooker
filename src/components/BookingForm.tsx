@@ -33,6 +33,7 @@ function BookingForm({readyToBook, selectedMovie, selectedSeats}: BookingFormPro
     };
     
     await addBooking(newBooking);
+    alert(`Booking successful! Tickets sent to ${values.phone}.`)
   }
 
   return(
