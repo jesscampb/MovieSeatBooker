@@ -4,6 +4,10 @@ import * as Yup from 'yup';
 import { Movie } from '../models/Movie';
 import { addMovie, updateMovie } from '../services/api';
 
+interface AdminMovieFormProps {
+  movieToEdit: Movie | null;
+}
+
 const MovieSchema = Yup.object().shape({
   title: Yup.string()
     .required('Title is required'),
@@ -16,7 +20,7 @@ const MovieSchema = Yup.object().shape({
     .min(1900, 'Year must be after 1900')
     .max(new Date().getFullYear(), 'Year must be current year or in the past')
     .nullable(),
-  duration: Yup.object({
+  duration: Yup.object().shape({
     hours: Yup.number()
       .min(0, 'Hours must be at least 0')
       .nullable(),
@@ -30,7 +34,20 @@ const MovieSchema = Yup.object().shape({
     .nullable()
 });
 
-function AdminMovieForm() {
+function AdminMovieForm({movieToEdit}: AdminMovieFormProps) {
+
+  const initialValues: Movie = movieToEdit || {
+    title: '',
+    genre: '',
+    year: undefined,
+    duration: {
+      hours: undefined,
+      minutes: undefined
+    },
+    price: 0,
+    plot: '',
+    impact: ''
+  };
 
   const handleMovieSubmit = async (values: Movie, {resetForm}: {resetForm: () => void }) => {
     if (values.id) {
@@ -47,20 +64,10 @@ function AdminMovieForm() {
     <div className='movie-form-container'>
 
       <Formik
-      initialValues={{
-        title: '',
-        genre: '',
-        year: undefined,
-        duration: {
-          hours: undefined,
-          minutes: undefined
-        },
-        price: NaN,
-        plot: '',
-        impact: ''
-      }}
+      initialValues={initialValues}
       validationSchema={MovieSchema}
       onSubmit={handleMovieSubmit}
+      enableReinitialize={true}
       >
         {({errors, touched}) => (
           <Form className='form-container'>
