@@ -20,14 +20,6 @@ const MovieSchema = Yup.object().shape({
     .min(1900, 'Year must be after 1900')
     .max(new Date().getFullYear(), 'Year must be current year or in the past')
     .nullable(),
-  duration: Yup.object().shape({
-    hours: Yup.number()
-      .min(0, 'Hours must be at least 0')
-      .nullable(),
-    minutes: Yup.number()
-      .min(0, 'Minutes must be at least 0')
-      .nullable()
-  }).nullable(),
   plot: Yup.string()
     .nullable(),
   impact: Yup.string()
@@ -40,10 +32,6 @@ function AdminMovieForm({movieToEdit}: AdminMovieFormProps) {
     title: '',
     genre: '',
     year: undefined,
-    duration: {
-      hours: undefined,
-      minutes: undefined
-    },
     price: 0,
     plot: '',
     impact: ''
@@ -100,20 +88,6 @@ function AdminMovieForm({movieToEdit}: AdminMovieFormProps) {
               <Field type='number' name='year' id='year' placeholder='Movie release year' />
               {errors.year && touched.year ? (
                 <div className='error-message'>{errors.year}</div>
-              ): null}
-            </div>
-
-            <div className='form-duration'>
-              <label htmlFor='duration'>Duration:</label>
-
-              <Field type='number' name='duration.hours' id='duration.hours' placeholder='Hours' />
-              {errors.duration?.hours && touched.duration?.hours ? (
-                <div className='error-message'>{errors.duration?.hours}</div>
-              ): null}
-              
-              <Field type='number' name='duration.minutes' id='duration.minutes' placeholder='Minutes over the hour' />
-              {errors.duration?.minutes && touched.duration?.minutes ? (
-                <div className='error-message'>{errors.duration?.minutes}</div>
               ): null}
             </div>
 
